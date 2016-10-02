@@ -105,8 +105,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-STRIPE_PUBLIC_KEY = os.environ.get("STRIPE_PUBLIC_KEY", "pk_test_qaZCJqXVtBP0kF4dzaVHhA6y ")
-STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY", "sk_test_kwqeBLI94M1vLU6juNE3y0CM")
+STRIPE_PUBLIC_KEY = os.environ.get("STRIPE_PUBLIC_KEY", "pk_test_JvFmvlWC8sP5I3udRzW5Kufb")
+STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY", "sk_test_qGV601qtFA9MGqaLQ6dswx1A")
 
 DJSTRIPE_PLANS = {
     "monthly": {

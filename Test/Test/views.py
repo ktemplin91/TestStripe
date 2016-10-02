@@ -17,6 +17,12 @@ class StripeMixin(object):
 class SuccessView(TemplateView):
     template_name = 'thank_you.html'
 
+class CusomterMixin(object):
+    def get_gustomer(self):
+        try:
+            return self.request.user.customer
+        except:
+            return Customer.create(self.request.user)
 
 class SubscribeView(StripeMixin, FormView):
     template_name = 'subscribe.html'
@@ -32,6 +38,6 @@ class SubscribeView(StripeMixin, FormView):
         }
         customer = stripe.Customer.create(**customer_data)
 
-        customer.subscriptions.create(plan="basic_plan")
+        customer.subscriptions.create(plan="monthly")
 
         return super(SubscribeView, self).form_valid(form)
